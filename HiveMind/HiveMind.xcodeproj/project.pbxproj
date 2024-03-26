@@ -26,8 +26,8 @@
 		E10BDE752BAD4EF50089D240 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E10BDEB52BAD68410089D240 /* Feature */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Feature; path = ../Feature; sourceTree = "<group>"; };
 		E10BDEBF2BB1052A0089D240 /* AppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponent.swift; sourceTree = "<group>"; };
-		E11576B92BB2ECE1002346E8 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Domain; path = ../../HiveMind/Domain; sourceTree = "<group>"; };
-		E11576BC2BB2EFBC002346E8 /* Network */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Network; path = ../../HiveMind/Network; sourceTree = "<group>"; };
+		E11576BD2BB2F342002346E8 /* Network */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Network; path = ../Network; sourceTree = "<group>"; };
+		E11576BE2BB2F351002346E8 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Domain; path = ../Domain; sourceTree = "<group>"; };
 		E17C0D532BB2A56800F9829A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E1DF6B042BB2E1AD005686E3 /* ProxyModule */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ProxyModule; path = ../ProxyModule; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -48,8 +48,8 @@
 		E10BDE5B2BAD4EF40089D240 = {
 			isa = PBXGroup;
 			children = (
-				E11576BC2BB2EFBC002346E8 /* Network */,
-				E11576B92BB2ECE1002346E8 /* Domain */,
+				E11576BE2BB2F351002346E8 /* Domain */,
+				E11576BD2BB2F342002346E8 /* Network */,
 				E1DF6B042BB2E1AD005686E3 /* ProxyModule */,
 				E10BDEB52BAD68410089D240 /* Feature */,
 				E10BDE662BAD4EF40089D240 /* HiveMind */,
