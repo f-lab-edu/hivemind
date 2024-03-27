@@ -14,11 +14,11 @@ protocol HomeRouting: ViewableRouting {
 
 protocol HomePresentable: Presentable {
     var listener: HomePresentableListener? { get set }
-    // TODO: Declare methods the interactor can invoke the presenter to present data.
+
 }
 
 protocol HomeListener: AnyObject {
-    // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
+
 }
 
 final class HomeInteractor: PresentableInteractor<HomePresentable>, HomeInteractable, HomePresentableListener {
@@ -35,11 +35,9 @@ final class HomeInteractor: PresentableInteractor<HomePresentable>, HomeInteract
 
     override func didBecomeActive() {
         super.didBecomeActive()
-        // TODO: Implement business logic here.
     }
 
     override func willResignActive() {
         super.willResignActive()
-        // TODO: Pause any business logic.
     }
 }

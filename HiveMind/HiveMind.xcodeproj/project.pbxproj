@@ -13,8 +13,11 @@
 		E10BDE742BAD4EF50089D240 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E10BDE732BAD4EF50089D240 /* Base */; };
 		E10BDEC02BB1052A0089D240 /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10BDEBF2BB1052A0089D240 /* AppComponent.swift */; };
 		E17C0D542BB2A56800F9829A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E17C0D532BB2A56800F9829A /* GoogleService-Info.plist */; };
+		E1C561DC2BB3E7810066CC97 /* FeatureImpl in Frameworks */ = {isa = PBXBuildFile; productRef = E1C561DB2BB3E7810066CC97 /* FeatureImpl */; };
 		E1DF6B082BB2E277005686E3 /* Feature in Frameworks */ = {isa = PBXBuildFile; productRef = E1DF6B072BB2E277005686E3 /* Feature */; };
-		E1DF6B0A2BB2E2C6005686E3 /* ProxyModule in Frameworks */ = {isa = PBXBuildFile; productRef = E1DF6B092BB2E2C6005686E3 /* ProxyModule */; };
+		E1FA12F42BB3D4EC004180F2 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = E1FA12F32BB3D4EC004180F2 /* Domain */; };
+		E1FA12F62BB3D500004180F2 /* Network in Frameworks */ = {isa = PBXBuildFile; productRef = E1FA12F52BB3D500004180F2 /* Network */; };
+		E1FA12F82BB3D582004180F2 /* ProxyModule in Frameworks */ = {isa = PBXBuildFile; productRef = E1FA12F72BB3D582004180F2 /* ProxyModule */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,7 @@
 		E10BDEBF2BB1052A0089D240 /* AppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponent.swift; sourceTree = "<group>"; };
 		E11576BD2BB2F342002346E8 /* Network */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Network; path = ../Network; sourceTree = "<group>"; };
 		E11576BE2BB2F351002346E8 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Domain; path = ../Domain; sourceTree = "<group>"; };
+		E126F96B2BB3013B00854AB0 /* HiveMind.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HiveMind.entitlements; sourceTree = "<group>"; };
 		E17C0D532BB2A56800F9829A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E1DF6B042BB2E1AD005686E3 /* ProxyModule */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ProxyModule; path = ../ProxyModule; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -37,8 +41,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1C561DC2BB3E7810066CC97 /* FeatureImpl in Frameworks */,
+				E1FA12F62BB3D500004180F2 /* Network in Frameworks */,
+				E1FA12F42BB3D4EC004180F2 /* Domain in Frameworks */,
 				E1DF6B082BB2E277005686E3 /* Feature in Frameworks */,
-				E1DF6B0A2BB2E2C6005686E3 /* ProxyModule in Frameworks */,
+				E1FA12F82BB3D582004180F2 /* ProxyModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +76,7 @@
 		E10BDE662BAD4EF40089D240 /* HiveMind */ = {
 			isa = PBXGroup;
 			children = (
+				E126F96B2BB3013B00854AB0 /* HiveMind.entitlements */,
 				E11576BA2BB2ED14002346E8 /* Application */,
 				E11576BB2BB2ED1C002346E8 /* Resources */,
 			);
@@ -121,7 +129,10 @@
 			name = HiveMind;
 			packageProductDependencies = (
 				E1DF6B072BB2E277005686E3 /* Feature */,
-				E1DF6B092BB2E2C6005686E3 /* ProxyModule */,
+				E1FA12F32BB3D4EC004180F2 /* Domain */,
+				E1FA12F52BB3D500004180F2 /* Network */,
+				E1FA12F72BB3D582004180F2 /* ProxyModule */,
+				E1C561DB2BB3E7810066CC97 /* FeatureImpl */,
 			);
 			productName = HiveMind;
 			productReference = E10BDE642BAD4EF40089D240 /* HiveMind.app */;
@@ -324,11 +335,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HiveMind/HiveMind.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5KZ5C4UW39;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = HiveMind/Info.plist;
+				INFOPLIST_FILE = HiveMind/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = HiveMind;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -354,11 +366,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HiveMind/HiveMind.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5KZ5C4UW39;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = HiveMind/Info.plist;
+				INFOPLIST_FILE = HiveMind/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = HiveMind;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -403,11 +416,23 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E1C561DB2BB3E7810066CC97 /* FeatureImpl */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FeatureImpl;
+		};
 		E1DF6B072BB2E277005686E3 /* Feature */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Feature;
 		};
-		E1DF6B092BB2E2C6005686E3 /* ProxyModule */ = {
+		E1FA12F32BB3D4EC004180F2 /* Domain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Domain;
+		};
+		E1FA12F52BB3D500004180F2 /* Network */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Network;
+		};
+		E1FA12F72BB3D582004180F2 /* ProxyModule */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ProxyModule;
 		};

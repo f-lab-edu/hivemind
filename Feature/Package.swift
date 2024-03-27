@@ -10,7 +10,12 @@ let package = Package(
         .library(
             name: "Feature",
             targets: ["Home",
-                      "HomeImpl"
+                      "Login",
+                     ]),
+        .library(
+            name: "FeatureImpl",
+            targets: ["HomeImpl",
+                      "LoginImpl",
                      ]),
     ],
     dependencies: [
@@ -32,5 +37,21 @@ let package = Package(
           ],
           path: "Home/Implementation"
         ),
+        .target(
+          name: "Login",
+          dependencies: [
+            .product(name: "ProxyModule", package: "ProxyModule"),
+          ],
+          path: "Login/Interface"
+        ),
+        .target(
+          name: "LoginImpl",
+          dependencies: [
+            "Login",
+            .product(name: "ProxyModule", package: "ProxyModule"),
+          ],
+          path: "Login/Implementation"
+        ),
+        
     ]
 )

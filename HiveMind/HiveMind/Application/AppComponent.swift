@@ -7,10 +7,13 @@
 
 import HomeImpl
 import Home
+import Login
+import LoginImpl
 
-final class AppComponent: HomeDependency{
+final class AppComponent: HomeDependency, LoginDependency{
     
     lazy var homeBuildable: HomeBuildable = HomeBuilder(dependency: self)
+    lazy var loginBuildable: LoginBuildable = LoginBuilder(dependency: self)
     
     init() {
                 
