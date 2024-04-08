@@ -10,16 +10,19 @@ let package = Package(
         .library(
             name: "Feature",
             targets: ["Home",
-                      "Login",
+                      "Login"
                      ]),
         .library(
             name: "FeatureImpl",
             targets: ["HomeImpl",
                       "LoginImpl",
                      ]),
+        .library(name: "Auth",
+                 targets: ["Auth"])
     ],
     dependencies: [
         .package(path: "../ProxyModule"),
+        .package(path: "../Domain")
     ],
     targets: [
         .target(
@@ -41,6 +44,8 @@ let package = Package(
           name: "Login",
           dependencies: [
             .product(name: "ProxyModule", package: "ProxyModule"),
+            .product(name: "AuthRepositories", package: "Domain") // 이 부분 추가
+
           ],
           path: "Login/Interface"
         ),
@@ -49,9 +54,17 @@ let package = Package(
           dependencies: [
             "Login",
             .product(name: "ProxyModule", package: "ProxyModule"),
+            
           ],
           path: "Login/Implementation"
         ),
-        
+        .target(
+          name: "Auth",
+          dependencies: [
+            .product(name: "ProxyModule", package: "ProxyModule"),
+            .product(name: "AuthRepositories", package: "Domain")
+          ],
+          path: "Auth"
+        ),
     ]
 )

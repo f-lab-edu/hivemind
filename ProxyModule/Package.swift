@@ -14,9 +14,10 @@ let package = Package(
             targets: ["ProxyModule"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/uber/RIBs.git", branch: "main"),
-        .package(url: "https://github.com/SnapKit/SnapKit.git", branch: "main"),
-        .package(url: "https://github.com/firebase/firebase-ios-sdk.git", branch: "main"),
+        .package(url: "https://github.com/firebase/firebase-ios-sdk.git", exact: "10.15.0"),
+        .package(url: "https://github.com/ReactiveX/RxSwift.git", exact: "6.5.0"),
+        .package(url: "https://github.com/uber/RIBs.git", exact: "0.15.1"),
+        .package(url: "https://github.com/SnapKit/SnapKit.git", from: "5.0.0"),
     ],
     targets: [
         .target(
@@ -24,6 +25,7 @@ let package = Package(
         dependencies: [
             .product(name: "SnapKit", package: "SnapKit"),
             .product(name: "RIBs", package: "RIBs"),
+            .product(name: "RxSwift", package: "RxSwift"),
             .product(name: "FirebaseFirestore", package: "firebase-ios-sdk"),
             .product(name: "FirebaseAnalytics", package: "firebase-ios-sdk"),
             .product(name: "FirebaseAuth", package: "firebase-ios-sdk")

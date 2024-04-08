@@ -7,17 +7,21 @@
 
 import RIBs
 import RxSwift
-import Login
+
+
+public protocol LoginRouting: ViewableRouting {
+}
 
 protocol LoginPresentable: Presentable {
     var listener: LoginPresentableListener? { get set }
+}
 
+public protocol LoginListener: AnyObject {
+    func startSignInWithAppleFlow()
 }
 
 final class LoginInteractor: PresentableInteractor<LoginPresentable>, LoginInteractable, LoginPresentableListener {
-    
-    func requestLogin() {   
-    }
+
     
 
     weak var router: LoginRouting?
@@ -34,5 +38,9 @@ final class LoginInteractor: PresentableInteractor<LoginPresentable>, LoginInter
 
     override func willResignActive() {
         super.willResignActive()
+    }
+    
+    func didTapAppleLoginButton() {
+        listener?.startSignInWithAppleFlow()
     }
 }

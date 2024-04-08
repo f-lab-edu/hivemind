@@ -29,7 +29,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 extension SceneDelegate {
     private func configureAppLaunch() {
         guard let window = window else { return }
-        self.launchRouter = self.appComponent.homeBuildable.build()
+//        self.launchRouter = self.appComponent.homeBuildable.build()
+        self.launchRouter = self.appComponent.loginBuildable.build()
         self.launchRouter?.launch(from: window)
     }
 }

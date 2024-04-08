@@ -11,28 +11,19 @@ let package = Package(
     products: [
         .library(
             name: "Domain",
-            targets: ["Authentication",
-                      "AuthenticationImpl"
-                     ]),
+            targets: ["AuthRepositories"]),
+        .library(
+            name: "AuthRepositories",
+            targets: ["AuthRepositories"]),
     ],
     dependencies: [
-        .package(path: "../ProxyModule"),
     ],
     targets: [
         .target(
-          name: "Authentication",
+          name: "AuthRepositories",
           dependencies: [
-            .product(name: "ProxyModule", package: "ProxyModule"),
           ],
-          path: "Authentication/Interface"
+          path: "AuthRepositories/Apple"
         ),
-        .target(
-          name: "AuthenticationImpl",
-          dependencies: [
-            .product(name: "ProxyModule", package: "ProxyModule"),
-          ],
-          path: "Authentication/Implementation"
-        ),
-
     ]
 )

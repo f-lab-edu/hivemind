@@ -1,7 +1,7 @@
 import XCTest
-@testable import Network
+@testable import DataAccess
 
-final class NetworkTests: XCTestCase {
+final class DataAccessTests: XCTestCase {
     func testExample() throws {
         // XCTest Documentation
         // https://developer.apple.com/documentation/xctest
