@@ -12,12 +12,10 @@
 		E10BDE712BAD4EF50089D240 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E10BDE702BAD4EF50089D240 /* Assets.xcassets */; };
 		E10BDE742BAD4EF50089D240 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E10BDE732BAD4EF50089D240 /* Base */; };
 		E10BDEC02BB1052A0089D240 /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10BDEBF2BB1052A0089D240 /* AppComponent.swift */; };
-		E11852432BC44A8A00C07B8A /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = E11852422BC44A8A00C07B8A /* Auth */; };
-		E11852452BC44A8D00C07B8A /* Feature in Frameworks */ = {isa = PBXBuildFile; productRef = E11852442BC44A8D00C07B8A /* Feature */; };
-		E11852472BC44A8F00C07B8A /* FeatureImpl in Frameworks */ = {isa = PBXBuildFile; productRef = E11852462BC44A8F00C07B8A /* FeatureImpl */; };
-		E11852492BC44AFF00C07B8A /* ProxyModule in Frameworks */ = {isa = PBXBuildFile; productRef = E11852482BC44AFF00C07B8A /* ProxyModule */; };
-		E118524B2BC44D0700C07B8A /* AuthRepositories in Frameworks */ = {isa = PBXBuildFile; productRef = E118524A2BC44D0700C07B8A /* AuthRepositories */; };
-		E118524D2BC44D0900C07B8A /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = E118524C2BC44D0900C07B8A /* Domain */; };
+		E12122A52BCD00E200DE98BA /* DataAccess in Frameworks */ = {isa = PBXBuildFile; productRef = E12122A42BCD00E200DE98BA /* DataAccess */; };
+		E12122A72BCD00E400DE98BA /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = E12122A62BCD00E400DE98BA /* Domain */; };
+		E12122A92BCD00E600DE98BA /* Feature in Frameworks */ = {isa = PBXBuildFile; productRef = E12122A82BCD00E600DE98BA /* Feature */; };
+		E12122AB2BCD00E800DE98BA /* ProxyModule in Frameworks */ = {isa = PBXBuildFile; productRef = E12122AA2BCD00E800DE98BA /* ProxyModule */; };
 		E17C0D542BB2A56800F9829A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E17C0D532BB2A56800F9829A /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -42,12 +40,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E118524D2BC44D0900C07B8A /* Domain in Frameworks */,
-				E118524B2BC44D0700C07B8A /* AuthRepositories in Frameworks */,
-				E11852432BC44A8A00C07B8A /* Auth in Frameworks */,
-				E11852472BC44A8F00C07B8A /* FeatureImpl in Frameworks */,
-				E11852452BC44A8D00C07B8A /* Feature in Frameworks */,
-				E11852492BC44AFF00C07B8A /* ProxyModule in Frameworks */,
+				E12122A92BCD00E600DE98BA /* Feature in Frameworks */,
+				E12122A72BCD00E400DE98BA /* Domain in Frameworks */,
+				E12122A52BCD00E200DE98BA /* DataAccess in Frameworks */,
+				E12122AB2BCD00E800DE98BA /* ProxyModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,12 +126,10 @@
 			);
 			name = HiveMind;
 			packageProductDependencies = (
-				E11852422BC44A8A00C07B8A /* Auth */,
-				E11852442BC44A8D00C07B8A /* Feature */,
-				E11852462BC44A8F00C07B8A /* FeatureImpl */,
-				E11852482BC44AFF00C07B8A /* ProxyModule */,
-				E118524A2BC44D0700C07B8A /* AuthRepositories */,
-				E118524C2BC44D0900C07B8A /* Domain */,
+				E12122A42BCD00E200DE98BA /* DataAccess */,
+				E12122A62BCD00E400DE98BA /* Domain */,
+				E12122A82BCD00E600DE98BA /* Feature */,
+				E12122AA2BCD00E800DE98BA /* ProxyModule */,
 			);
 			productName = HiveMind;
 			productReference = E10BDE642BAD4EF40089D240 /* HiveMind.app */;
@@ -419,29 +413,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E11852422BC44A8A00C07B8A /* Auth */ = {
+		E12122A42BCD00E200DE98BA /* DataAccess */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = Auth;
+			productName = DataAccess;
 		};
-		E11852442BC44A8D00C07B8A /* Feature */ = {
+		E12122A62BCD00E400DE98BA /* Domain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Domain;
+		};
+		E12122A82BCD00E600DE98BA /* Feature */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Feature;
 		};
-		E11852462BC44A8F00C07B8A /* FeatureImpl */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = FeatureImpl;
-		};
-		E11852482BC44AFF00C07B8A /* ProxyModule */ = {
+		E12122AA2BCD00E800DE98BA /* ProxyModule */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ProxyModule;
-		};
-		E118524A2BC44D0700C07B8A /* AuthRepositories */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = AuthRepositories;
-		};
-		E118524C2BC44D0900C07B8A /* Domain */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Domain;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

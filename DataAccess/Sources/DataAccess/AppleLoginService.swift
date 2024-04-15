@@ -8,6 +8,7 @@
 import CryptoKit
 import AuthenticationServices
 import FirebaseAuth
+
 import Domain
 
 public class AppleLoginService: NSObject, AppleLoginServiceProtocol, ASAuthorizationControllerDelegate {

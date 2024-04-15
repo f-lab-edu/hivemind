@@ -11,19 +11,18 @@ let package = Package(
     products: [
         .library(
             name: "Domain",
-            targets: ["AuthRepositories"]),
-        .library(
-            name: "AuthRepositories",
-            targets: ["AuthRepositories"]),
+            targets: ["Domain"]),
     ],
     dependencies: [
     ],
     targets: [
         .target(
-          name: "AuthRepositories",
-          dependencies: [
-          ],
-          path: "AuthRepositories/Apple"
+          name: "Domain",
+          dependencies: []),
+        .target(
+            name: "DomainTests",
+            dependencies: ["Domain"],
+            path: "Tests"
         ),
     ]
 )

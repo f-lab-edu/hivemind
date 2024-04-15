@@ -4,12 +4,11 @@
 //
 //  Created by 유준용 on 3/25/24.
 //
-import Auth
-import AuthRepositories
-import HomeImpl
+
+import Domain
+import DataAccess
 import Home
 import Login
-import LoginImpl
 
 final class AppComponent: HomeDependency, LoginDependency{
         

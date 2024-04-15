@@ -12,17 +12,11 @@ let package = Package(
             targets: ["Home",
                       "Login"
                      ]),
-        .library(
-            name: "FeatureImpl",
-            targets: ["HomeImpl",
-                      "LoginImpl",
-                     ]),
-        .library(name: "Auth",
-                 targets: ["Auth"])
     ],
     dependencies: [
         .package(path: "../ProxyModule"),
-        .package(path: "../Domain")
+        .package(path: "../Domain"),
+        .package(path: "../DataAccess")
     ],
     targets: [
         .target(
@@ -30,41 +24,16 @@ let package = Package(
           dependencies: [
             .product(name: "ProxyModule", package: "ProxyModule"),
           ],
-          path: "Home/Interface"
-        ),
-        .target(
-          name: "HomeImpl",
-          dependencies: [
-            "Home",
-            .product(name: "ProxyModule", package: "ProxyModule"),
-          ],
-          path: "Home/Implementation"
+          path: "Home"
         ),
         .target(
           name: "Login",
           dependencies: [
             .product(name: "ProxyModule", package: "ProxyModule"),
-            .product(name: "AuthRepositories", package: "Domain") // 이 부분 추가
-
+            .product(name: "Domain", package: "Domain"),
+            .product(name: "DataAccess", package: "DataAccess")
           ],
-          path: "Login/Interface"
-        ),
-        .target(
-          name: "LoginImpl",
-          dependencies: [
-            "Login",
-            .product(name: "ProxyModule", package: "ProxyModule"),
-            
-          ],
-          path: "Login/Implementation"
-        ),
-        .target(
-          name: "Auth",
-          dependencies: [
-            .product(name: "ProxyModule", package: "ProxyModule"),
-            .product(name: "AuthRepositories", package: "Domain")
-          ],
-          path: "Auth"
+          path: "Login"
         ),
     ]
 )
