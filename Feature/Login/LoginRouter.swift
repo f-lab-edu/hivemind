@@ -5,8 +5,8 @@
 //  Created by 유준용 on 3/27/24.
 //
 
-import Auth
-import AuthRepositories
+import DataAccess
+import Domain
 
 import RIBs
 

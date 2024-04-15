@@ -16,7 +16,9 @@ final class HomeComponent: Component<HomeDependency> {
 
 }
 
-// MARK: - Builder
+public protocol HomeBuildable: Buildable {
+    func build() -> LaunchRouting
+}
 
 public final class HomeBuilder: Builder<HomeDependency>, HomeBuildable {
 

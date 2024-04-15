@@ -5,11 +5,10 @@
 //  Created by 유준용 on 4/8/24.
 //
 
-import AuthRepositories
-
 import CryptoKit
 import AuthenticationServices
 import FirebaseAuth
+import Domain
 
 public class AppleLoginService: NSObject, AppleLoginServiceProtocol, ASAuthorizationControllerDelegate {
     

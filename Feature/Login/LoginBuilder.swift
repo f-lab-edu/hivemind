@@ -4,8 +4,8 @@
 //
 //  Created by 유준용 on 3/27/24.
 //
-import AuthRepositories
-import Auth
+import DataAccess
+import Domain
 
 import RIBs
 import Login
@@ -20,7 +20,9 @@ final class LoginComponent: Component<LoginDependency> {
     }
 }
 
-// MARK: - Builder
+public protocol LoginBuildable: Buildable {
+    func build() -> LaunchRouting
+}
 
 public final class LoginBuilder: Builder<LoginDependency>, LoginBuildable {
 
