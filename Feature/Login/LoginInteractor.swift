@@ -28,7 +28,7 @@ final class LoginInteractor: PresentableInteractor<LoginPresentable>, LoginInter
     weak var router: LoginRouting?
     weak var listener: LoginListener?
     
-    let appleSignInService: AppleSignInService
+    let appleSignInService: SocialAuthenticatable
     
     init(presenter: LoginPresentable,
          appleSignInService: AppleSignInService

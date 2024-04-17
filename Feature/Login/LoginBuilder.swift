@@ -4,10 +4,13 @@
 //
 //  Created by 유준용 on 3/27/24.
 //
-import DataAccess
+import DataAccess ❌
 import Domain
 
 import RIBs
+
+
+// UI -> Domain <- DataAccess
 
 public protocol LoginDependency: Dependency {
     var appleSignInService: AppleSignInService { get }

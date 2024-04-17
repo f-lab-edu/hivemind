@@ -25,3 +25,14 @@ final class AppComponent: AppRootDependency,
         
     }
 }
+
+///
+/// Domain
+/// - service protocol
+/// - service implementation
+/// - repository protocol
+/// - domain model
+///
+/// DataAccess
+/// - repository implementation
+///

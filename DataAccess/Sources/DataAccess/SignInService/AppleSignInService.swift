@@ -11,7 +11,9 @@ import FirebaseAuth
 
 import Domain
 
-public class AppleSignInService: NSObject, SocialAuthenticatable {
+AppleSignInService <- startSignInFlow()
+
+public class AppleSignInService: NSObject, AppleLoginRepository {
     
     private var currentNonce: String?
     public weak var delegate: SocialSignInDelegate?
@@ -73,18 +75,14 @@ extension AppleSignInService: ASAuthorizationControllerDelegate {
             delegate?.didCompleteSignIn(error: NSError(domain: "AppleLogin", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid credentials or state"]))
             return
         }
+      
+      return credential
 
         let credential = OAuthProvider.appleCredential(withIDToken: idTokenString,
                                                        rawNonce: nonce,
                                                        fullName: appleIDCredential.fullName
         )
-        Auth.auth().signIn(with: credential) { (authResult, error) in
-            if let error = error {
-                self.delegate?.didCompleteSignIn(error: error)
-            } else {
-                self.delegate?.didCompleteSignIn(error: nil)
-            }
-        }
+      
     }
 
     public func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
@@ -132,3 +130,15 @@ extension AppleSignInService: ASAuthorizationControllerDelegate {
 //      print("Sign in with Apple errored: \(error)")
 //    }
 //  }
+
+public class FirebaseAuthRepository: RemoteAuthRepository {
+  //...
+  //Auth.auth()
+}
+
+
+public class HivemindRemoteAuthRepository: RemoteAuthRepository {
+  ...
+  // login
+  network.post()
+}
