@@ -13,9 +13,11 @@ protocol HomeInteractable: Interactable {
 }
 
 protocol HomeViewControllable: ViewControllable {
+    
+    
 }
 
-final class HomeRouter: LaunchRouter<HomeInteractable, HomeViewControllable>, HomeRouting {
+final class HomeRouter: ViewableRouter<HomeInteractable, HomeViewControllable>, HomeRouting {
 
     override init(interactor: HomeInteractable, viewController: HomeViewControllable) {
         super.init(interactor: interactor, viewController: viewController)

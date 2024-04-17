@@ -17,6 +17,10 @@
 		E12122A92BCD00E600DE98BA /* Feature in Frameworks */ = {isa = PBXBuildFile; productRef = E12122A82BCD00E600DE98BA /* Feature */; };
 		E12122AB2BCD00E800DE98BA /* ProxyModule in Frameworks */ = {isa = PBXBuildFile; productRef = E12122AA2BCD00E800DE98BA /* ProxyModule */; };
 		E17C0D542BB2A56800F9829A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E17C0D532BB2A56800F9829A /* GoogleService-Info.plist */; };
+		E1F746A22BCDF45E001F8918 /* AppRootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F7469E2BCDF45E001F8918 /* AppRootRouter.swift */; };
+		E1F746A32BCDF45E001F8918 /* AppRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F7469F2BCDF45E001F8918 /* AppRootViewController.swift */; };
+		E1F746A42BCDF45E001F8918 /* AppRootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F746A02BCDF45E001F8918 /* AppRootBuilder.swift */; };
+		E1F746A52BCDF45E001F8918 /* AppRootInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F746A12BCDF45E001F8918 /* AppRootInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +37,10 @@
 		E17C0D532BB2A56800F9829A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E192872B2BC44DB7000B5281 /* DataAccess */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = DataAccess; path = ../DataAccess; sourceTree = "<group>"; };
 		E1DF6B042BB2E1AD005686E3 /* ProxyModule */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ProxyModule; path = ../ProxyModule; sourceTree = "<group>"; };
+		E1F7469E2BCDF45E001F8918 /* AppRootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootRouter.swift; sourceTree = "<group>"; };
+		E1F7469F2BCDF45E001F8918 /* AppRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootViewController.swift; sourceTree = "<group>"; };
+		E1F746A02BCDF45E001F8918 /* AppRootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootBuilder.swift; sourceTree = "<group>"; };
+		E1F746A12BCDF45E001F8918 /* AppRootInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,9 +99,8 @@
 		E11576BA2BB2ED14002346E8 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				E10BDE672BAD4EF40089D240 /* AppDelegate.swift */,
-				E10BDE692BAD4EF40089D240 /* SceneDelegate.swift */,
-				E10BDEBF2BB1052A0089D240 /* AppComponent.swift */,
+				E1F746A62BCDF4CB001F8918 /* AppDelegate */,
+				E12122AC2BCD0EFD00DE98BA /* AppRoot */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -107,6 +114,27 @@
 				E10BDE752BAD4EF50089D240 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		E12122AC2BCD0EFD00DE98BA /* AppRoot */ = {
+			isa = PBXGroup;
+			children = (
+				E1F7469E2BCDF45E001F8918 /* AppRootRouter.swift */,
+				E1F7469F2BCDF45E001F8918 /* AppRootViewController.swift */,
+				E1F746A02BCDF45E001F8918 /* AppRootBuilder.swift */,
+				E1F746A12BCDF45E001F8918 /* AppRootInteractor.swift */,
+			);
+			path = AppRoot;
+			sourceTree = "<group>";
+		};
+		E1F746A62BCDF4CB001F8918 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				E10BDE672BAD4EF40089D240 /* AppDelegate.swift */,
+				E10BDE692BAD4EF40089D240 /* SceneDelegate.swift */,
+				E10BDEBF2BB1052A0089D240 /* AppComponent.swift */,
+			);
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,6 +219,10 @@
 				E10BDEC02BB1052A0089D240 /* AppComponent.swift in Sources */,
 				E10BDE682BAD4EF40089D240 /* AppDelegate.swift in Sources */,
 				E10BDE6A2BAD4EF40089D240 /* SceneDelegate.swift in Sources */,
+				E1F746A22BCDF45E001F8918 /* AppRootRouter.swift in Sources */,
+				E1F746A32BCDF45E001F8918 /* AppRootViewController.swift in Sources */,
+				E1F746A42BCDF45E001F8918 /* AppRootBuilder.swift in Sources */,
+				E1F746A52BCDF45E001F8918 /* AppRootInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

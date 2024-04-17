@@ -7,7 +7,10 @@
 
 import RIBs
 import RxSwift
+import FirebaseAuth
 
+import Domain
+import DataAccess
 
 public protocol LoginRouting: ViewableRouting {
 }
@@ -17,30 +20,41 @@ protocol LoginPresentable: Presentable {
 }
 
 public protocol LoginListener: AnyObject {
-    func startSignInWithAppleFlow()
+    func dismissLoginFlow()
 }
 
-final class LoginInteractor: PresentableInteractor<LoginPresentable>, LoginInteractable, LoginPresentableListener {
-
+final class LoginInteractor: PresentableInteractor<LoginPresentable>, LoginInteractable, LoginPresentableListener, SocialSignInDelegate {
     
-
     weak var router: LoginRouting?
     weak var listener: LoginListener?
-
-    override init(presenter: LoginPresentable) {
+    
+    let appleSignInService: AppleSignInService
+    
+    init(presenter: LoginPresentable,
+         appleSignInService: AppleSignInService
+         
+    ) {
+        self.appleSignInService = appleSignInService
         super.init(presenter: presenter)
         presenter.listener = self
+        self.appleSignInService.delegate = self
     }
 
     override func didBecomeActive() {
         super.didBecomeActive()
-    }
 
+    }
+    
     override func willResignActive() {
         super.willResignActive()
     }
     
     func didTapAppleLoginButton() {
-        listener?.startSignInWithAppleFlow()
+        appleSignInService.startSignInFlow()
+    }
+    
+    func didCompleteSignIn(error: (any Error)?) {
+        print(#function, #file, #line)
+        listener?.dismissLoginFlow()
     }
 }

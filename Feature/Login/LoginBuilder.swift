@@ -8,20 +8,19 @@ import DataAccess
 import Domain
 
 import RIBs
-import Login
 
 public protocol LoginDependency: Dependency {
-    var appleLoginService: AppleLoginService { get }
+    var appleSignInService: AppleSignInService { get }
 }
 
 final class LoginComponent: Component<LoginDependency> {
-    var appleLoginService: AppleLoginService {
-        dependency.appleLoginService
+    var appleSignInService: AppleSignInService {
+        dependency.appleSignInService
     }
 }
 
 public protocol LoginBuildable: Buildable {
-    func build() -> LaunchRouting
+    func build(withListener listener: LoginListener) -> LoginRouting
 }
 
 public final class LoginBuilder: Builder<LoginDependency>, LoginBuildable {
@@ -30,13 +29,13 @@ public final class LoginBuilder: Builder<LoginDependency>, LoginBuildable {
         super.init(dependency: dependency)
     }
 
-    public func build() -> LaunchRouting {
+    public func build(withListener listener: LoginListener) -> LoginRouting {
         let component = LoginComponent(dependency: dependency)
         let viewController = LoginViewController()
-        let interactor = LoginInteractor(presenter: viewController)
-        let appleLoginService = AppleLoginService()
-        return LoginRouter(interactor: interactor, 
-                           viewController: viewController,
-                           appleLoginService: component.appleLoginService)
+        let interactor = LoginInteractor(presenter: viewController, 
+                                         appleSignInService: component.appleSignInService)
+        interactor.listener = listener
+        return LoginRouter(interactor: interactor,
+                           viewController: viewController)
     }
 }

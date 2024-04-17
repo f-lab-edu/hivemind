@@ -6,7 +6,6 @@
 //
 
 import RIBs
-import Home
 
 public protocol HomeDependency: Dependency {
 
@@ -17,7 +16,7 @@ final class HomeComponent: Component<HomeDependency> {
 }
 
 public protocol HomeBuildable: Buildable {
-    func build() -> LaunchRouting
+    func build(withListener listener: HomeListener) -> HomeRouting
 }
 
 public final class HomeBuilder: Builder<HomeDependency>, HomeBuildable {
@@ -26,7 +25,7 @@ public final class HomeBuilder: Builder<HomeDependency>, HomeBuildable {
         super.init(dependency: dependency)
     }
 
-    public func build() -> LaunchRouting {
+    public func build(withListener listener: HomeListener) -> HomeRouting {
         _ = HomeComponent(dependency: self.dependency)
       let viewController = HomeViewController()
         viewController.view.backgroundColor = .white

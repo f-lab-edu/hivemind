@@ -19,21 +19,14 @@ protocol LoginViewControllable: ViewControllable {
     // TODO: Declare methods the router invokes to manipulate the view hierarchy.
 }
 
-final class LoginRouter: LaunchRouter<LoginInteractable, LoginViewControllable>, LoginRouting, LoginListener {
-    
-    private var appleLoginService: AppleLoginService
-    
-    init(interactor: LoginInteractable,
-                  viewController: LoginViewControllable,
-                  appleLoginService: AppleLoginService) {
-        self.appleLoginService = appleLoginService
+final class LoginRouter: ViewableRouter<LoginInteractable, LoginViewControllable>, LoginRouting {
+        
+    override init(interactor: LoginInteractable,
+         viewController: LoginViewControllable
+    ) {
         super.init(interactor: interactor, viewController: viewController)
         interactor.router = self
-        interactor.listener = self
     }
     
-    func startSignInWithAppleFlow() {
-        appleLoginService.startSignInWithAppleFlow()
-        print(#function)
-    }
+
 }
