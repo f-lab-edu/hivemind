@@ -4,21 +4,18 @@
 //
 //  Created by 유준용 on 3/27/24.
 //
-import DataAccess ❌
-import Domain
 
 import RIBs
+import Domain
 
-
-// UI -> Domain <- DataAccess
 
 public protocol LoginDependency: Dependency {
-    var appleSignInService: AppleSignInService { get }
+    var socialAuthenticator: SocialAuthenticatable { get }
 }
 
-final class LoginComponent: Component<LoginDependency> {
-    var appleSignInService: AppleSignInService {
-        dependency.appleSignInService
+final class LoginComponent: Component<LoginDependency>, LoginInteractorDependency {
+    var socialAuthenticator: SocialAuthenticatable {
+        dependency.socialAuthenticator
     }
 }
 
@@ -35,10 +32,14 @@ public final class LoginBuilder: Builder<LoginDependency>, LoginBuildable {
     public func build(withListener listener: LoginListener) -> LoginRouting {
         let component = LoginComponent(dependency: dependency)
         let viewController = LoginViewController()
-        let interactor = LoginInteractor(presenter: viewController, 
-                                         appleSignInService: component.appleSignInService)
+        let interactor = LoginInteractor(
+            presenter: viewController,
+            dependency: component
+        )
         interactor.listener = listener
-        return LoginRouter(interactor: interactor,
-                           viewController: viewController)
+        return LoginRouter(
+            interactor: interactor,
+            viewController: viewController
+        )
     }
 }

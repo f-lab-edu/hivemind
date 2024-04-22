@@ -1,6 +1,6 @@
 //
 //  LoginInteractor.swift
-//  
+//
 //
 //  Created by 유준용 on 3/27/24.
 //
@@ -13,6 +13,7 @@ import Domain
 import DataAccess
 
 public protocol LoginRouting: ViewableRouting {
+    
 }
 
 protocol LoginPresentable: Presentable {
@@ -23,38 +24,43 @@ public protocol LoginListener: AnyObject {
     func dismissLoginFlow()
 }
 
-final class LoginInteractor: PresentableInteractor<LoginPresentable>, LoginInteractable, LoginPresentableListener, SocialSignInDelegate {
+public protocol LoginInteractorDependency {
+    var socialAuthenticator: SocialAuthenticatable { get }
+}
+
+final class LoginInteractor: PresentableInteractor<LoginPresentable>, LoginInteractable, LoginPresentableListener {
     
     weak var router: LoginRouting?
     weak var listener: LoginListener?
     
-    let appleSignInService: SocialAuthenticatable
+    let dependency: LoginInteractorDependency
     
     init(presenter: LoginPresentable,
-         appleSignInService: AppleSignInService
-         
+         dependency: LoginInteractorDependency
     ) {
-        self.appleSignInService = appleSignInService
+        self.dependency = dependency
         super.init(presenter: presenter)
         presenter.listener = self
-        self.appleSignInService.delegate = self
-    }
-
-    override func didBecomeActive() {
-        super.didBecomeActive()
-
-    }
-    
-    override func willResignActive() {
-        super.willResignActive()
     }
     
     func didTapAppleLoginButton() {
-        appleSignInService.startSignInFlow()
+        self.appleLoginFlow()
     }
     
-    func didCompleteSignIn(error: (any Error)?) {
-        print(#function, #file, #line)
-        listener?.dismissLoginFlow()
+    private func appleLoginFlow() {
+        Task {
+            do {
+                try await dependency.socialAuthenticator.signInWithAppleFlow()
+                dismissLoginFlow()
+            } catch {
+                print("Error during sign in: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    private func dismissLoginFlow(){
+        DispatchQueue.main.async {
+            self.listener?.dismissLoginFlow()
+        }
     }
 }

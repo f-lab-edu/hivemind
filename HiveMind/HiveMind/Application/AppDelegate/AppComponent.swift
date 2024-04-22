@@ -14,15 +14,16 @@ final class AppComponent: AppRootDependency,
                           HomeDependency,
                           LoginDependency {
     
+    var socialAuthenticator: SocialAuthenticatable
     
     
-    lazy var appleSignInService = AppleSignInService()
     lazy var homeBuildable: HomeBuildable = HomeBuilder(dependency: self)
     lazy var loginBuildable: LoginBuildable = LoginBuilder(dependency: self)
     lazy var appRootBuildable: AppRootBuildable = AppRootBuilder(dependency: self)
     
     init() {
-        
+        socialAuthenticator = SocialAuthenticator(appleLoginRepository: AppleSignInRepositoryImpl(),
+                                        firebaseRepo: FirebaseAuthRepositoryImpl())
     }
 }
 
