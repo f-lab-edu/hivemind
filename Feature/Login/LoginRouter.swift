@@ -5,10 +5,8 @@
 //  Created by 유준용 on 3/27/24.
 //
 
-import DataAccess
-import Domain
-
 import RIBs
+import Domain
 
 protocol LoginInteractable: Interactable {
     var router: LoginRouting? { get set }
