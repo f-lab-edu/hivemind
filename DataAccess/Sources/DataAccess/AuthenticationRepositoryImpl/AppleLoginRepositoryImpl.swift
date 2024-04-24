@@ -26,9 +26,9 @@ public class AppleSignInRepositoryImpl: NSObject, AppleLoginRepository {
         
         let authorizationController = ASAuthorizationController(authorizationRequests: [request])
         authorizationController.delegate = self
-        authorizationController.performRequests()
         do {
             return try await withCheckedThrowingContinuation { continuation in
+                authorizationController.performRequests()
                 self.continuation = continuation
             }
         }

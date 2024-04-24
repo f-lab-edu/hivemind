@@ -6,6 +6,8 @@
 //
 
 import RIBs
+import ProxyModule
+import FirebaseFirestore
 
 public protocol HomeRouting: ViewableRouting { }
 
@@ -32,6 +34,20 @@ final class HomeInteractor: PresentableInteractor<HomePresentable>, HomeInteract
 
     override func didBecomeActive() {
         super.didBecomeActive()
+        // Add a new document with a generated ID
+        Task {
+            do {
+                let db = Firestore.firestore()
+                let ref = try await db.collection("users").addDocument(data: [
+                    "nickName": "Adam",
+                
+                ])
+                print("Document added with ID: \(ref.documentID)")
+            } catch {
+                print("Error adding document: \(error)")
+            }
+        }
+
     }
 
     override func willResignActive() {

@@ -19,7 +19,7 @@ let package = Package(
         .target(
           name: "Domain",
           dependencies: []),
-        .target(
+        .testTarget(
             name: "DomainTests",
             dependencies: ["Domain"],
             path: "Tests"

@@ -19,5 +19,6 @@ final class HomeViewController: UIViewController, HomePresentable, HomeViewContr
     override func viewIsAppearing(_ animated: Bool) {
         super.viewIsAppearing(true)
         self.view.backgroundColor = .yellow
+        
     }
 }
