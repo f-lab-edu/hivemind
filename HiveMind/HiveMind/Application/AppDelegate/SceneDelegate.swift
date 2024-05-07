@@ -22,15 +22,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: scene)
         self.window = window
         configureAppLaunch()
-        print("App Start")
     }
 }
 
 extension SceneDelegate {
     private func configureAppLaunch() {
         guard let window = window else { return }
-        self.launchRouter = self.appComponent.homeBuildable.build()
+
+//        self.launchRouter = self.appComponent.loginBuildable.build()
+        self.launchRouter = self.appComponent.appRootBuildable.build()
         self.launchRouter?.launch(from: window)
     }
+
 }
 

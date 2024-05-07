@@ -6,19 +6,18 @@
 //
 
 import RIBs
-import RxSwift
+import ProxyModule
+import FirebaseFirestore
 
-protocol HomeRouting: ViewableRouting {
-    // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
-}
+public protocol HomeRouting: ViewableRouting { }
 
 protocol HomePresentable: Presentable {
     var listener: HomePresentableListener? { get set }
-    // TODO: Declare methods the interactor can invoke the presenter to present data.
+
 }
 
-protocol HomeListener: AnyObject {
-    // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
+public protocol HomeListener: AnyObject {
+
 }
 
 final class HomeInteractor: PresentableInteractor<HomePresentable>, HomeInteractable, HomePresentableListener {
@@ -35,11 +34,23 @@ final class HomeInteractor: PresentableInteractor<HomePresentable>, HomeInteract
 
     override func didBecomeActive() {
         super.didBecomeActive()
-        // TODO: Implement business logic here.
+        // Add a new document with a generated ID
+        Task {
+            do {
+                let db = Firestore.firestore()
+                let ref = try await db.collection("users").addDocument(data: [
+                    "nickName": "Adam",
+                
+                ])
+                print("Document added with ID: \(ref.documentID)")
+            } catch {
+                print("Error adding document: \(error)")
+            }
+        }
+
     }
 
     override func willResignActive() {
         super.willResignActive()
-        // TODO: Pause any business logic.
     }
 }

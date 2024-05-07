@@ -6,19 +6,18 @@
 //
 
 import RIBs
-import Home
 
 public protocol HomeDependency: Dependency {
-    // TODO: Declare the set of dependencies required by this RIB, but cannot be
-    // created by this RIB.
+
 }
 
 final class HomeComponent: Component<HomeDependency> {
 
-    // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
 }
 
-// MARK: - Builder
+public protocol HomeBuildable: Buildable {
+    func build(withListener listener: HomeListener) -> HomeRouting
+}
 
 public final class HomeBuilder: Builder<HomeDependency>, HomeBuildable {
 
@@ -26,7 +25,7 @@ public final class HomeBuilder: Builder<HomeDependency>, HomeBuildable {
         super.init(dependency: dependency)
     }
 
-    public func build() -> LaunchRouting {
+    public func build(withListener listener: HomeListener) -> HomeRouting {
         _ = HomeComponent(dependency: self.dependency)
       let viewController = HomeViewController()
         viewController.view.backgroundColor = .white

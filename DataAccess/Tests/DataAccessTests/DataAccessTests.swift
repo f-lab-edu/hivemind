@@ -1,7 +1,7 @@
 import XCTest
-@testable import Domain
+@testable import DataAccess
 
-final class DomainTests: XCTestCase {
+final class DataAccessTests: XCTestCase {
     func testExample() throws {
         // XCTest Documentation
         // https://developer.apple.com/documentation/xctest
@@ -10,3 +10,4 @@ final class DomainTests: XCTestCase {
         // https://developer.apple.com/documentation/xctest/defining_test_cases_and_test_methods
     }
 }
+

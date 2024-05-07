@@ -10,11 +10,13 @@ let package = Package(
         .library(
             name: "Feature",
             targets: ["Home",
-                      "HomeImpl"
+                      "Login"
                      ]),
     ],
     dependencies: [
         .package(path: "../ProxyModule"),
+        .package(path: "../Domain"),
+        .package(path: "../DataAccess")
     ],
     targets: [
         .target(
@@ -22,15 +24,16 @@ let package = Package(
           dependencies: [
             .product(name: "ProxyModule", package: "ProxyModule"),
           ],
-          path: "Home/Interface"
+          path: "Home"
         ),
         .target(
-          name: "HomeImpl",
+          name: "Login",
           dependencies: [
-            "Home",
             .product(name: "ProxyModule", package: "ProxyModule"),
+            .product(name: "Domain", package: "Domain"),
+            .product(name: "DataAccess", package: "DataAccess")
           ],
-          path: "Home/Implementation"
+          path: "Login"
         ),
     ]
 )

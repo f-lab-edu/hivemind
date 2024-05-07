@@ -12,9 +12,15 @@
 		E10BDE712BAD4EF50089D240 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E10BDE702BAD4EF50089D240 /* Assets.xcassets */; };
 		E10BDE742BAD4EF50089D240 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E10BDE732BAD4EF50089D240 /* Base */; };
 		E10BDEC02BB1052A0089D240 /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10BDEBF2BB1052A0089D240 /* AppComponent.swift */; };
+		E12122A52BCD00E200DE98BA /* DataAccess in Frameworks */ = {isa = PBXBuildFile; productRef = E12122A42BCD00E200DE98BA /* DataAccess */; };
+		E12122A72BCD00E400DE98BA /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = E12122A62BCD00E400DE98BA /* Domain */; };
+		E12122A92BCD00E600DE98BA /* Feature in Frameworks */ = {isa = PBXBuildFile; productRef = E12122A82BCD00E600DE98BA /* Feature */; };
+		E12122AB2BCD00E800DE98BA /* ProxyModule in Frameworks */ = {isa = PBXBuildFile; productRef = E12122AA2BCD00E800DE98BA /* ProxyModule */; };
 		E17C0D542BB2A56800F9829A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E17C0D532BB2A56800F9829A /* GoogleService-Info.plist */; };
-		E1DF6B082BB2E277005686E3 /* Feature in Frameworks */ = {isa = PBXBuildFile; productRef = E1DF6B072BB2E277005686E3 /* Feature */; };
-		E1DF6B0A2BB2E2C6005686E3 /* ProxyModule in Frameworks */ = {isa = PBXBuildFile; productRef = E1DF6B092BB2E2C6005686E3 /* ProxyModule */; };
+		E1F746A22BCDF45E001F8918 /* AppRootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F7469E2BCDF45E001F8918 /* AppRootRouter.swift */; };
+		E1F746A32BCDF45E001F8918 /* AppRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F7469F2BCDF45E001F8918 /* AppRootViewController.swift */; };
+		E1F746A42BCDF45E001F8918 /* AppRootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F746A02BCDF45E001F8918 /* AppRootBuilder.swift */; };
+		E1F746A52BCDF45E001F8918 /* AppRootInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F746A12BCDF45E001F8918 /* AppRootInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,10 +32,15 @@
 		E10BDE752BAD4EF50089D240 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E10BDEB52BAD68410089D240 /* Feature */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Feature; path = ../Feature; sourceTree = "<group>"; };
 		E10BDEBF2BB1052A0089D240 /* AppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponent.swift; sourceTree = "<group>"; };
-		E11576BD2BB2F342002346E8 /* Network */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Network; path = ../Network; sourceTree = "<group>"; };
 		E11576BE2BB2F351002346E8 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Domain; path = ../Domain; sourceTree = "<group>"; };
+		E126F96B2BB3013B00854AB0 /* HiveMind.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HiveMind.entitlements; sourceTree = "<group>"; };
 		E17C0D532BB2A56800F9829A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E192872B2BC44DB7000B5281 /* DataAccess */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = DataAccess; path = ../DataAccess; sourceTree = "<group>"; };
 		E1DF6B042BB2E1AD005686E3 /* ProxyModule */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ProxyModule; path = ../ProxyModule; sourceTree = "<group>"; };
+		E1F7469E2BCDF45E001F8918 /* AppRootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootRouter.swift; sourceTree = "<group>"; };
+		E1F7469F2BCDF45E001F8918 /* AppRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootViewController.swift; sourceTree = "<group>"; };
+		E1F746A02BCDF45E001F8918 /* AppRootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootBuilder.swift; sourceTree = "<group>"; };
+		E1F746A12BCDF45E001F8918 /* AppRootInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,8 +48,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1DF6B082BB2E277005686E3 /* Feature in Frameworks */,
-				E1DF6B0A2BB2E2C6005686E3 /* ProxyModule in Frameworks */,
+				E12122A92BCD00E600DE98BA /* Feature in Frameworks */,
+				E12122A72BCD00E400DE98BA /* Domain in Frameworks */,
+				E12122A52BCD00E200DE98BA /* DataAccess in Frameworks */,
+				E12122AB2BCD00E800DE98BA /* ProxyModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,8 +61,8 @@
 		E10BDE5B2BAD4EF40089D240 = {
 			isa = PBXGroup;
 			children = (
+				E192872B2BC44DB7000B5281 /* DataAccess */,
 				E11576BE2BB2F351002346E8 /* Domain */,
-				E11576BD2BB2F342002346E8 /* Network */,
 				E1DF6B042BB2E1AD005686E3 /* ProxyModule */,
 				E10BDEB52BAD68410089D240 /* Feature */,
 				E10BDE662BAD4EF40089D240 /* HiveMind */,
@@ -69,6 +82,7 @@
 		E10BDE662BAD4EF40089D240 /* HiveMind */ = {
 			isa = PBXGroup;
 			children = (
+				E126F96B2BB3013B00854AB0 /* HiveMind.entitlements */,
 				E11576BA2BB2ED14002346E8 /* Application */,
 				E11576BB2BB2ED1C002346E8 /* Resources */,
 			);
@@ -85,9 +99,8 @@
 		E11576BA2BB2ED14002346E8 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				E10BDE672BAD4EF40089D240 /* AppDelegate.swift */,
-				E10BDE692BAD4EF40089D240 /* SceneDelegate.swift */,
-				E10BDEBF2BB1052A0089D240 /* AppComponent.swift */,
+				E1F746A62BCDF4CB001F8918 /* AppDelegate */,
+				E12122AC2BCD0EFD00DE98BA /* AppRoot */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -101,6 +114,27 @@
 				E10BDE752BAD4EF50089D240 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		E12122AC2BCD0EFD00DE98BA /* AppRoot */ = {
+			isa = PBXGroup;
+			children = (
+				E1F7469E2BCDF45E001F8918 /* AppRootRouter.swift */,
+				E1F7469F2BCDF45E001F8918 /* AppRootViewController.swift */,
+				E1F746A02BCDF45E001F8918 /* AppRootBuilder.swift */,
+				E1F746A12BCDF45E001F8918 /* AppRootInteractor.swift */,
+			);
+			path = AppRoot;
+			sourceTree = "<group>";
+		};
+		E1F746A62BCDF4CB001F8918 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				E10BDE672BAD4EF40089D240 /* AppDelegate.swift */,
+				E10BDE692BAD4EF40089D240 /* SceneDelegate.swift */,
+				E10BDEBF2BB1052A0089D240 /* AppComponent.swift */,
+			);
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,8 +154,10 @@
 			);
 			name = HiveMind;
 			packageProductDependencies = (
-				E1DF6B072BB2E277005686E3 /* Feature */,
-				E1DF6B092BB2E2C6005686E3 /* ProxyModule */,
+				E12122A42BCD00E200DE98BA /* DataAccess */,
+				E12122A62BCD00E400DE98BA /* Domain */,
+				E12122A82BCD00E600DE98BA /* Feature */,
+				E12122AA2BCD00E800DE98BA /* ProxyModule */,
 			);
 			productName = HiveMind;
 			productReference = E10BDE642BAD4EF40089D240 /* HiveMind.app */;
@@ -183,6 +219,10 @@
 				E10BDEC02BB1052A0089D240 /* AppComponent.swift in Sources */,
 				E10BDE682BAD4EF40089D240 /* AppDelegate.swift in Sources */,
 				E10BDE6A2BAD4EF40089D240 /* SceneDelegate.swift in Sources */,
+				E1F746A22BCDF45E001F8918 /* AppRootRouter.swift in Sources */,
+				E1F746A32BCDF45E001F8918 /* AppRootViewController.swift in Sources */,
+				E1F746A42BCDF45E001F8918 /* AppRootBuilder.swift in Sources */,
+				E1F746A52BCDF45E001F8918 /* AppRootInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,11 +364,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HiveMind/HiveMind.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5KZ5C4UW39;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = HiveMind/Info.plist;
+				INFOPLIST_FILE = HiveMind/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = HiveMind;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -354,11 +395,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HiveMind/HiveMind.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5KZ5C4UW39;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = HiveMind/Info.plist;
+				INFOPLIST_FILE = HiveMind/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = HiveMind;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -403,11 +445,19 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E1DF6B072BB2E277005686E3 /* Feature */ = {
+		E12122A42BCD00E200DE98BA /* DataAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DataAccess;
+		};
+		E12122A62BCD00E400DE98BA /* Domain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Domain;
+		};
+		E12122A82BCD00E600DE98BA /* Feature */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Feature;
 		};
-		E1DF6B092BB2E2C6005686E3 /* ProxyModule */ = {
+		E12122AA2BCD00E800DE98BA /* ProxyModule */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ProxyModule;
 		};
